@@ -10,7 +10,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState("dashboard");
   const [toggleDrawer, setToggleDrawer] = useState(false);
-  const { connect = undefined, address = undefined } = useStateContext() || {};
+  const { connect, address = undefined } = useStateContext() || {};
 
   return (
     <div className="flex md:flex-row flex-col-reverse justify-between mb-[35px] gap-6">

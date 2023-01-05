@@ -13,7 +13,7 @@ interface StateContextInterface {
   address: any;
   contract: any;
   connect: any;
-  createCampaign: (form: Campaign) => Promise<void>;
+  createCampaign: (form: any) => Promise<void>;
   getCampaigns: () => Promise<void>;
   getUserCampaigns: () => Promise<void>;
   donate: (pId: number, amount: string) => Promise<any>;
@@ -26,7 +26,7 @@ const StateContext = createContext<StateContextInterface | null>(null);
 
 export const StateContextProvider = ({ children }: { children: ReactNode }) => {
   const { contract } = useContract(
-    "0xf59A1f8251864e1c5a6bD64020e3569be27e6AA9"
+    "0xD4ACFcbB93855279345B6AB5458Fc4DD907ED75d"
   );
   const { mutateAsync: createCampaign } = useContractWrite(
     contract,

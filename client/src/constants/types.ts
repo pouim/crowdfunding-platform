@@ -1,3 +1,5 @@
+import { BigNumber } from "ethers";
+
 export type NavLink = {
   name: string;
   imgUrl: string;
@@ -10,7 +12,7 @@ export type Campaign = {
   title: string;
   description: string;
   deadline: string;
-  target: string;
+  target: any;
   amount: number;
   amountCollected: number;
   image: string;
