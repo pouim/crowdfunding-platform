@@ -10,8 +10,15 @@ export type Campaign = {
   title: string;
   description: string;
   deadline: string;
-  target: number;
+  target: string;
   amount: number;
   amountCollected: number;
   image: string;
+};
+
+export type FormFieldsData = Pick<
+  Campaign,
+  "title" | "description" | "target" | "deadline" | "image"
+> & {
+  name: string;
 };

@@ -1,8 +1,8 @@
 interface CustomButtonProps {
   btnType: "submit" | "button" | "reset";
   title: string;
-  handleClick: () => void;
-  styles: string;
+  handleClick?: () => void;
+  styles?: string;
 }
 
 const CustomButton = (props: CustomButtonProps) => {
