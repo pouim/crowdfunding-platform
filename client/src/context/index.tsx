@@ -14,7 +14,7 @@ interface StateContextInterface {
   contract: any;
   connect: any;
   createCampaign: (form: any) => Promise<void>;
-  getCampaigns: () => Promise<void>;
+  getCampaigns: () => Promise<any>;
   getUserCampaigns: () => Promise<void>;
   donate: (pId: number, amount: string) => Promise<any>;
   getDonations: (
@@ -56,7 +56,7 @@ export const StateContextProvider = ({ children }: { children: ReactNode }) => {
   const getCampaigns = async () => {
     const campaigns = await contract?.call("getCampaigns");
 
-    const parsedCampaings = campaigns.map((campaign: Campaign, i: number) => ({
+    const parsedCampaigns = campaigns.map((campaign: Campaign, i: number) => ({
       owner: campaign.owner,
       title: campaign.title,
       description: campaign.description,
@@ -69,7 +69,7 @@ export const StateContextProvider = ({ children }: { children: ReactNode }) => {
       pId: i,
     }));
 
-    return parsedCampaings;
+    return parsedCampaigns;
   };
 
   const getUserCampaigns = async () => {
